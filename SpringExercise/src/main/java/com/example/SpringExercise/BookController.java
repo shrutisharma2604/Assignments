@@ -9,7 +9,12 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
 
-   @PostMapping("/saveBook")
+    @GetMapping("/welcome")
+    public String locale(){
+        return "welcome";
+    }
+
+    @PostMapping("/saveBook")
     public Book saveBook(@RequestBody Book book) {
         return bookRepository.save(book);
     }
